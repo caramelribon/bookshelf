@@ -1,18 +1,13 @@
 <template>
-  <button v-on:click="countUp">
-    {{ count }} すごいね！
-  </button>
+  <div id="app">
+    <shelf-header />
+  </div>
 </template>
 
 <script>
+import ShelfHeader from '@/components/ShelfHeader.vue';
+
 export default {
-  data() {
-    return { count: 0 };
-  },
-  methods: {
-    countUp() {
-      this.count += 1;
-    },
-  },
+  components: { ShelfHeader },
 };
 </script>
