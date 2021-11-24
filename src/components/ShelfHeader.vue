@@ -9,6 +9,7 @@
               alt="Bookshelf"
             />
           </b-navbar-brand>
+          <shelf-modal class="ml-auto"></shelf-modal>
         </b-navbar>
       </b-col>
     </b-row>
@@ -23,6 +24,7 @@ import {
   BNavbarBrand,
   BRow,
 } from 'bootstrap-vue';
+import ShelfModal from '@/components/ShelfModal.vue';
 
 export default {
   components: {
@@ -31,6 +33,7 @@ export default {
     BNavbar,
     BNavbarBrand,
     BRow,
+    ShelfModal,
   },
 };
 </script>
