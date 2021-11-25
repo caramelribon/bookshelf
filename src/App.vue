@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <shelf-header @add-book="onAddBook"></shelf-header>
+    <shelf-message></shelf-message>
     <shelf-books :books="books"></shelf-books>
   </div>
 </template>
@@ -8,10 +9,11 @@
 <script>
 import ShelfBooks from '@/components/ShelfBooks.vue';
 import ShelfHeader from '@/components/ShelfHeader.vue';
+import ShelfMessage from '@/components/ShelfMessage.vue';
 import { getBooks } from '@/services/bookService';
 
 export default {
-  components: { ShelfBooks, ShelfHeader },
+  components: { ShelfBooks, ShelfHeader, ShelfMessage },
   data() {
     return { books: [] };
   },
