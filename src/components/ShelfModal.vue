@@ -209,6 +209,8 @@ export default {
       this.toDefault();
 
       // TODO: カスタムイベントを発行する
+      const { id, title, image } = response.data;
+      this.$emit('add-book', { id, title, image });
 
       this.hideModal();
       this.imageFile = null;
