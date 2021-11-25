@@ -9,7 +9,7 @@
               alt="Bookshelf"
             />
           </b-navbar-brand>
-          <shelf-modal 
+          <shelf-modal
            class="ml-auto"
            @add-book="onAddBook"
            >
@@ -34,14 +34,14 @@ export default {
   components: {
     BCol,
     BContainer,
+    ShelfModal,
     BNavbar,
     BNavbarBrand,
     BRow,
-    ShelfModal,
   },
   methods: {
     onAddBook(book) {
-      this.$emit('add-book,book');
+      this.$emit('add-book', book);
     },
   },
 };
