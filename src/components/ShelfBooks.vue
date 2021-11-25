@@ -8,14 +8,28 @@
         <p class="text-center">登録された本はありません。</p>
       </b-col>
       <b-col
-        v-for="book in books"
-        :key="book.id"
+        v-for="{ id, title, image } in books"
+        :key="id"
         class="my-3"
         cols="6"
         md="4"
         lg="3"
       >
-        <pre class="shelf-books__item">{{ JSON.stringify(book, null, 2) }}</pre>
+        <b-card
+          class="shelf-books__item"
+          :img-src="image"
+          img-alt=""
+          :title="title"
+          title-tag="h2"
+          :aria-label="title"
+        >
+          <div class="text-right">
+            <b-button variant="outline-danger">
+              <b-icon-trash></b-icon-trash>
+              削除
+            </b-button>
+          </div>
+        </b-card>
       </b-col>
     </b-row>
   </b-container>
@@ -23,15 +37,21 @@
 
 <script>
 import {
+  BButton,
+  BCard,
   BCol,
   BContainer,
+  BIconTrash,
   BRow,
 } from 'bootstrap-vue';
 
 export default {
   components: {
+    BButton,
+    BCard,
     BCol,
     BContainer,
+    BIconTrash,
     BRow,
   },
   props: {
@@ -44,7 +64,15 @@ export default {
 </script>
 
 <style scoped>
-.shelf-books__item {
+.shelf-books__item .card-body {
+  padding: .75rem;
   background-color: #fafafa;
+}
+
+.shelf-books__item .card-title {
+  margin-top: .25rem;
+  font-size: 1rem;
+  text-align: center;
+  overflow: hidden;
 }
 </style>
